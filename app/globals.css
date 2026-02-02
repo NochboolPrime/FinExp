@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: "AvanteBs";
+  src: url("/fonts/a_AvanteBs.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AvanteBs";
+  src: url("/fonts/a_AvanteBs_Italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/* Premium Dark Financial Theme - #243851 Primary */
+:root {
+  --background: #1a2a3a;
+  --foreground: #ffffff;
+  --card: #243851;
+  --card-foreground: #ffffff;
+  --popover: #243851;
+  --popover-foreground: #ffffff;
+  --primary: #243851;
+  --primary-foreground: #ffffff;
+  --secondary: #2d4562;
+  --secondary-foreground: #ffffff;
+  --muted: #1e3347;
+  --muted-foreground: #94a3b8;
+  --accent: #3a5a7c;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #3a5a7c;
+  --input: #2d4562;
+  --ring: #243851;
+  --chart-1: #243851;
+  --chart-2: #3a5a7c;
+  --chart-3: #10b981;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --radius: 0.25rem;
+  --sidebar: #243851;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #243851;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2d4562;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3a5a7c;
+  --sidebar-ring: #243851;
+}
+
+.dark {
+  --background: #1a2a3a;
+  --foreground: #ffffff;
+  --card: #243851;
+  --card-foreground: #ffffff;
+  --popover: #243851;
+  --popover-foreground: #ffffff;
+  --primary: #3a5a7c;
+  --primary-foreground: #ffffff;
+  --secondary: #2d4562;
+  --secondary-foreground: #ffffff;
+  --muted: #1e3347;
+  --muted-foreground: #94a3b8;
+  --accent: #4a6a8c;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3a5a7c;
+  --input: #2d4562;
+  --ring: #3a5a7c;
+  --chart-1: #3a5a7c;
+  --chart-2: #4a6a8c;
+  --chart-3: #10b981;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --sidebar: #243851;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #3a5a7c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2d4562;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3a5a7c;
+  --sidebar-ring: #3a5a7c;
+}
+
+@theme inline {
+  --font-sans: "AvanteBs", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Global smooth transition for theme switching */
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, fill, stroke, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 800ms;
+  }
+
+  /* Add delay to background color transition so images change first */
+  html,
+  body,
+  main,
+  [data-theme-container] {
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    transition-duration: 600ms;
+    transition-delay: 150ms;
+  }
+
+  /* Exclude elements that need instant transitions */
+  button,
+  a,
+  [role="button"] {
+    transition-duration: 300ms;
+    transition-delay: 0ms;
+  }
+
+  /* Smooth image crossfade */
+  img {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+    transition-delay: 0ms;
+  }
+}
+
+@layer utilities {
+  /* Smooth scroll behavior with offset for fixed header */
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Better tap targets for mobile - исключаем точки-индикаторы (dot indicators) */
+  @media (max-width: 640px) {
+    button:not(.dot-indicator), a, [role="button"]:not(.dot-indicator) {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}
