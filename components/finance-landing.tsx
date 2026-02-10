@@ -651,13 +651,13 @@ export function FinanceLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="py-8 sm:py-10 lg:py-12 bg-gray-100/80 backdrop-blur-xl border-t border-gray-200/50 relative">
+      <footer className="py-4 sm:py-10 lg:py-12 bg-gray-100/80 backdrop-blur-xl border-t border-gray-200/50 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-gray-200/30 backdrop-blur-sm" />
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
             {/* Logo */}
             <div>
-              <a href="#" className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+              <a href="#" className="footer-link flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4">
                 <Image
                   src="/images/logo-fin.png"
                   alt="ФинЭксперт"
@@ -675,14 +675,14 @@ export function FinanceLanding() {
             </div>
             {/* Navigation */}
             <div>
-              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Навигация</h4>
-              <ul className="space-y-1.5 sm:space-y-2">
+              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Навигация</h4>
+              <ul className="space-y-0 sm:space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
                       onClick={(e) => handleSmoothScroll(e, link.href)}
-                      className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
+                      className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
                       {link.name}
                     </a>
@@ -692,8 +692,8 @@ export function FinanceLanding() {
             </div>
             {/* Services */}
             <div>
-              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Услуги</h4>
-              <ul className="space-y-1.5 sm:space-y-2">
+              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Услуги</h4>
+              <ul className="space-y-0 sm:space-y-2">
                 {[
                   { name: "Финансовый консалтинг", href: "/services/consulting" },
                   { name: "Регистрация и ликвидация ЮЛ", href: "/services/registration" },
@@ -704,7 +704,7 @@ export function FinanceLanding() {
                   <li key={service.name}>
                     <a
                       href={service.href}
-                      className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
+                      className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
                       {service.name}
                     </a>
@@ -714,12 +714,12 @@ export function FinanceLanding() {
             </div>
             {/* Contacts */}
             <div>
-              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Контакты</h4>
-              <ul className="space-y-2 sm:space-y-3">
+              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Контакты</h4>
+              <ul className="space-y-0.5 sm:space-y-3">
                 <li>
                   <a
                     href="tel:+78129827090"
-                    className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5 sm:gap-2"
+                    className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5 sm:gap-2"
                   >
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                     +7 (812) 982 70 90
@@ -728,7 +728,7 @@ export function FinanceLanding() {
                 <li>
                   <a
                     href="mailto:info@finexspert24.ru"
-                    className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors break-all"
+                    className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors break-all"
                   >
                     info@finexspert24.ru
                   </a>
@@ -740,7 +740,7 @@ export function FinanceLanding() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-300/50 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
+          <div className="border-t border-gray-300/50 mt-4 sm:mt-10 lg:mt-12 pt-3 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
             © 2026 ФинЭксперт. Все права защищены.
           </div>
         </div>

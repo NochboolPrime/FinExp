@@ -19,7 +19,7 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
     { name: "Главная", href: "/" },
     { name: "О компании", href: "/about" },
     { name: "Услуги", href: "/#services" },
-    { name: "Новости", href: "/#news" },
+    { name: "Новости", href: "/news" },
     { name: "Контакты", href: "/#pricing" },
   ]
 
@@ -96,12 +96,12 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="py-6 sm:py-8 bg-gray-200/50 backdrop-blur-xl border-t border-gray-200/50">
+      <footer className="py-4 sm:py-8 bg-gray-200/50 backdrop-blur-xl border-t border-gray-200/50">
         <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {/* Logo */}
             <div>
-              <Link href="/" className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+              <Link href="/" className="footer-link flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
                 <Image
                   src="/images/logo-fin.png"
                   alt="ФинЭксперт"
@@ -120,13 +120,13 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
 
             {/* Navigation */}
             <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Навигация</h4>
-              <ul className="space-y-1">
+              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-1 sm:mb-2">Навигация</h4>
+              <ul className="space-y-0 sm:space-y-1">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors inline-block"
+                      className="footer-link text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
                       {link.name}
                     </Link>
@@ -137,13 +137,13 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
 
             {/* Services */}
             <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Услуги</h4>
-              <ul className="space-y-1">
+              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-1 sm:mb-2">Услуги</h4>
+              <ul className="space-y-0 sm:space-y-1">
                 {services.map((service) => (
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors inline-block"
+                      className="footer-link text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
                       {service.name}
                     </Link>
@@ -154,12 +154,12 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
 
             {/* Contacts */}
             <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Контакты</h4>
-              <ul className="space-y-1.5">
+              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-1 sm:mb-2">Контакты</h4>
+              <ul className="space-y-0.5 sm:space-y-1.5">
                 <li>
                   <a
                     href="tel:+78129827090"
-                    className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5"
+                    className="footer-link text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5"
                   >
                     <Phone className="w-3 h-3 shrink-0" />
                     <span>+7 (812) 982 70 90</span>
@@ -168,7 +168,7 @@ export function ServicePageLayout({ title, children }: ServicePageLayoutProps) {
                 <li>
                   <a
                     href="mailto:info@finexspert24.ru"
-                    className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors break-all"
+                    className="footer-link text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors break-all"
                   >
                     info@finexspert24.ru
                   </a>
