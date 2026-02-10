@@ -74,7 +74,7 @@ export function FinanceLanding() {
   useEffect(() => {
     const interval = setInterval(() => {
       setMissionSlide((prev) => (prev + 1) % missionSlides.length)
-    }, 3000)
+    }, 6000)
     return () => clearInterval(interval)
   }, [missionSlides.length])
 
@@ -82,7 +82,7 @@ export function FinanceLanding() {
     if (isTestimonialHovered) return
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 5000)
+    }, 8000)
     return () => clearInterval(interval)
   }, [isTestimonialHovered])
 
@@ -694,14 +694,19 @@ export function FinanceLanding() {
             <div>
               <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Услуги</h4>
               <ul className="space-y-1.5 sm:space-y-2">
-                {services.slice(0, 5).map((service) => (
-                  <li key={service}>
+                {[
+                  { name: "Финансовый консалтинг", href: "/services/consulting" },
+                  { name: "Регистрация и ликвидация ЮЛ", href: "/services/registration" },
+                  { name: "Бухгалтерские услуги", href: "/services/accounting" },
+                  { name: "Кадровый аутсорсинг", href: "/services/hr" },
+                  { name: "Банковские услуги", href: "/services/banking" },
+                ].map((service) => (
+                  <li key={service.name}>
                     <a
-                      href="#services"
-                      onClick={(e) => handleSmoothScroll(e, '#services')}
+                      href={service.href}
                       className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
-                      {service}
+                      {service.name}
                     </a>
                   </li>
                 ))}
