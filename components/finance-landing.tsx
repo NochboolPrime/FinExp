@@ -17,16 +17,150 @@ import {
   Quote,
 } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 import { CallbackModal } from "@/components/callback-modal"
 
-const services = [
-  "Финансовый консалтинг",
-  "Регистрация и ликвидация ЮЛ",
-  "Бухгалтерские услуги",
-  "Кадровый аутсорсинг",
-  "Банковские услуги",
-  // Дополнительные услуги могут быть добавлены здесь
+const serviceDetails = [
+  {
+    title: "Финансовый консалтинг",
+    desc: "Повышение финансовой эффективности компаний. Анализ, стратегия, оптимизация затрат и увеличение прибыли.",
+    iconPath: "M3 17L9 11L13 15L21 7M21 7H15M21 7V13",
+    content: [
+      {
+        heading: "Анализ финансового состояния",
+        items: [
+          "Экспресс-диагностика финансового состояния организации",
+          "Комплексный финансово-экономический анализ",
+          "Рекомендации по повышению платежеспособности, устойчивости, эффективности бизнеса",
+        ],
+      },
+      {
+        heading: "Внедрение/оптимизация системы управленческого учета и бюджетирования",
+        items: [
+          "Формализация стратегии и учетной политики Предприятия в области финансового управления",
+          "Разработка форм бюджетных документов, требований, и сопровождение внедрения автоматизированного управленческого учета на базе программы 1С",
+          "Подготовка и консультирование персонала",
+          "Внедрение CRM программы на базе Битрикс 24",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Регистрация и ликвидация ЮЛ",
+    desc: "Регистрация и ликвидация ООО, АО и ИП под ключ. Полное сопровождение на всех этапах.",
+    iconPath: "M9 12L11 14L15 10M19 21H5C4 21 3 20 3 19V5C3 4 4 3 5 3H19C20 3 21 4 21 5V19C21 20 20 21 19 21Z",
+    content: [
+      {
+        heading: "Регистрация фирм в Москве и Санкт-Петербурге",
+        items: [
+          "Консультации по вопросам выбора организационно-правовой формы, наименования, порядка и способов оплаты уставного капитала",
+          "Подготовка необходимого комплекта документов, разработка устава",
+          "Комплексное сопровождение регистрации фирмы \"под ключ\"",
+          "Подбор \"юридического адреса\"",
+          "Открытие расчетного счета в банке",
+          "Ведение бухгалтерского учета организации, сдача отчетности",
+          "Оказание бухгалтерских и налоговых консультаций, выбор режима налогообложения",
+          "Сопровождение регистрации выпуска акций акционерного общества",
+        ],
+      },
+      {
+        heading: "Стоимость услуг",
+        items: [
+          "Регистрация ООО, АО - от 4 900 руб. (гос. пошлина 4 000 руб. не включена)",
+          "Регистрация ИП - от 3 900 руб. (гос. пошлина не включена)",
+          "При использовании ЭЦП государственная пошлина не уплачивается!",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Бухгалтерские услуги",
+    desc: "Ведение бухгалтерского и налогового учета. Подготовка отчетности, оптимизация налогов.",
+    iconPath: "M4 5H20M4 9H12M4 13H20M4 17H12",
+    content: [
+      {
+        heading: "Обратившись к нашим специалистам Вы:",
+        items: [
+          "Сократите издержки на содержание собственного отдела бухгалтерии",
+          "Получите профессиональные консультации по бухгалтерскому и налоговому учету",
+          "Минимизируете финансовые риски по ведению бухучета",
+          "Грамотно оптимизируете налоговые расходы компании",
+        ],
+      },
+      {
+        heading: "Перечень услуг",
+        items: [
+          "Полное или частичное ведение бухгалтерского и налогового учета на базе программы 1С, сдача отчетности",
+          "Участие в налоговых и иных проверках",
+          "Услуга \"Главный бухгалтер\" (проверка первичной документации, закрытие периода, сдача отчетности)",
+          "Восстановление бухгалтерского и налогового учета",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Кадровый аутсорсинг",
+    desc: "Кадровое делопроизводство и подбор сотрудников. HR-консалтинг и управление персоналом.",
+    iconPath: "M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM12 11C7.02944 11 3 14.5817 3 19V21H21V19C21 14.5817 16.9706 11 12 11Z",
+    content: [
+      {
+        heading: "Кадровое администрирование",
+        items: [
+          "Ведение, постановка и восстановление кадрового учета",
+          "Разработка регламентов и положений",
+        ],
+      },
+      {
+        heading: "Подбор персонала",
+        items: [
+          "Быстрое закрытие вакансий специалистов и ТОП менеджеров",
+          "Использование собственной базы резюме, привлечение претендентов в социальных сетях",
+          "Проведение первичного отбора, оценка и проверка кандидатов",
+          "Гарантия на подобранного кандидата",
+        ],
+      },
+      {
+        heading: "Услуги для соискателей",
+        items: [
+          "Аудит резюме - 500 руб.",
+          "Создание резюме \"с нуля\" - 5 000 руб.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Банковские услуги",
+    desc: "Помощь в получении банковских гарантий и кредитов. Работа с лучшими банками-партнерами.",
+    iconPath: "M3 21H21M3 10H21M5 6L12 3L19 6M4 10V21M20 10V21M8 14V17M12 14V17M16 14V17",
+    content: [
+      {
+        heading: "Привлечем кредиты и оформим гарантии банков",
+        items: [
+          "Получим лучший процент по кредиту в текущих возможностях рынка",
+          "Работаем со всеми программами поддержки бизнеса (льготные кредиты и займы, гос. гарантии, субсидирование)",
+        ],
+      },
+      {
+        heading: "Наши преимущества",
+        items: [
+          "Работаем без предоплат - вы платите комиссию по факту доступа к деньгам",
+          "Ускоряем любую сделку за счет опыта и налаженных связей с банками",
+          "Льготные кредиты, гос. гарантии, субсидирование",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Новая услуга",
+    desc: "Описание услуги появится в ближайшее время.",
+    iconPath: "M12 6v6m0 0v6m0-6h6m-6 0H6",
+    content: [],
+  },
+  {
+    title: "Новая услуга",
+    desc: "Описание услуги появится в ближайшее время.",
+    iconPath: "M12 6v6m0 0v6m0-6h6m-6 0H6",
+    content: [],
+  },
 ]
 
 const testimonials = [
@@ -58,6 +192,7 @@ export function FinanceLanding() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [isTestimonialHovered, setIsTestimonialHovered] = useState(false)
   const [isCallbackOpen, setIsCallbackOpen] = useState(false)
+  const [expandedService, setExpandedService] = useState<number | null>(null)
   const testimonialRef = useRef<HTMLDivElement>(null)
 
   const missionSlides = [
@@ -339,98 +474,93 @@ export function FinanceLanding() {
             </div>
             {/* Right - Services List */}
             <div className="space-y-2">
-              {[
-                {
-                  title: "Финансовый консалтинг",
-                  desc: "Повышение финансовой эффективности компаний. Анализ, стратегия, оптимизация затрат и увеличение прибыли.",
-                  iconPath: "M3 17L9 11L13 15L21 7M21 7H15M21 7V13",
-                  href: "/services/consulting",
-                },
-                {
-                  title: "Регистрация и ликвидация ЮЛ",
-                  desc: "Регистрация и ликвидация ООО, АО и ИП под ключ. Полное сопровождение на всех этапах.",
-                  iconPath: "M9 12L11 14L15 10M19 21H5C4 21 3 20 3 19V5C3 4 4 3 5 3H19C20 3 21 4 21 5V19C21 20 20 21 19 21Z",
-                  href: "/services/registration",
-                },
-                {
-                  title: "Бухгалтерские услуги",
-                  desc: "Ведение бухгалтерского и налогового учета. Подготовка отчетности, оптимизация налогов.",
-                  iconPath: "M4 5H20M4 9H12M4 13H20M4 17H12",
-                  href: "/services/accounting",
-                },
-                {
-                  title: "Кадровый аутсорсинг",
-                  desc: "Кадровое делопроизводство и подбор сотрудников. HR-консалтинг и управление персоналом.",
-                  iconPath: "M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM12 11C7.02944 11 3 14.5817 3 19V21H21V19C21 14.5817 16.9706 11 12 11Z",
-                  href: "/services/hr",
-                },
-                {
-                  title: "Банковские услуги",
-                  desc: "Помощь в получении банковских гарантий и кредитов. Работа с лучшими банками-партнерами.",
-                  iconPath: "M3 21H21M3 10H21M5 6L12 3L19 6M4 10V21M20 10V21M8 14V17M12 14V17M16 14V17",
-                  href: "/services/banking",
-                },
-              ].map((service, index) => (
-                <Link
-                  href={service.href}
-                  key={index}
-                  className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg hover:shadow-[#243851]/10 active:scale-[0.99] block"
-                >
-                  {/* Animated left border */}
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 sm:w-1 bg-gray-200 group-hover:bg-[#243851] transition-colors duration-300">
-                    <div className="absolute inset-0 bg-[#243851] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
-                  </div>
-                 
-                  <div className="p-3 pl-4 sm:p-4 sm:pl-6">
-                    <div className="flex items-start gap-2.5 sm:gap-4">
-                      {/* Minimal Line Icon */}
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0 relative">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          className="w-4 h-4 sm:w-5 sm:h-5 text-[#243851] group-hover:scale-110 transition-transform duration-300"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d={service.iconPath} />
-                        </svg>
-                        <div className="absolute inset-0 rounded-sm bg-[#243851]/0 group-hover:bg-[#243851]/5 transition-colors duration-300" />
-                      </div>
-                     
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-0.5 sm:mb-1">
-                          <h3 className="text-sm sm:text-base font-semibold text-[#1a2a3a] group-hover:text-[#243851] transition-colors">
-                            {service.title}
-                          </h3>
+              {serviceDetails.map((service, index) => {
+                const isOpen = expandedService === index
+                return (
+                  <div
+                    key={index}
+                    className="group relative bg-white rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-md hover:shadow-[#243851]/8"
+                    onMouseEnter={() => setExpandedService(index)}
+                  >
+                    {/* Left accent border */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-0.5 sm:w-1 transition-colors duration-300 ${isOpen ? "bg-[#243851]" : "bg-gray-200 group-hover:bg-[#243851]"}`} />
+
+                    <div className="p-3 pl-4 sm:p-4 sm:pl-6">
+                      <div className="flex items-start gap-2.5 sm:gap-4">
+                        {/* Icon */}
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0">
                           <svg
                             viewBox="0 0 24 24"
                             fill="none"
-                            className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-300 group-hover:text-[#243851] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all duration-300 shrink-0"
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-[#243851]"
                             strokeWidth="1.5"
                             stroke="currentColor"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >
-                            <path d="M7 17L17 7M17 7H8M17 7V16" />
+                            <path d={service.iconPath} />
                           </svg>
                         </div>
-                       
-                        {/* Description - expands on hover, always visible on mobile */}
-                        <div className="sm:grid sm:grid-rows-[0fr] sm:group-hover:grid-rows-[1fr] sm:transition-all sm:duration-500">
-                          <div className="sm:overflow-hidden">
-                            <p className="text-gray-500 text-xs leading-relaxed pt-0.5 pb-0.5 sm:pb-1">
-                              {service.desc}
-                            </p>
+
+                        {/* Title + description */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm sm:text-base font-semibold text-[#1a2a3a]">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-500 text-xs leading-relaxed mt-0.5">
+                            {service.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Expandable detail content */}
+                    <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                      <div className="overflow-hidden">
+                        <div className="px-4 pb-4 sm:px-6 sm:pb-5 border-t border-gray-100">
+                          {/* Close button */}
+                          <div className="flex justify-end pt-3 pb-2">
+                            <button
+                              onClick={() => setExpandedService(null)}
+                              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                              aria-label="Закрыть"
+                            >
+                              <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-500" />
+                            </button>
                           </div>
+
+                          {/* Detail sections */}
+                          <div className="space-y-4">
+                            {service.content.map((section, sIdx) => (
+                              <div key={sIdx}>
+                                <h4 className="text-xs sm:text-sm font-semibold text-[#1a2a3a] mb-2">
+                                  {section.heading}
+                                </h4>
+                                <ul className="space-y-1.5">
+                                  {section.items.map((item, iIdx) => (
+                                    <li key={iIdx} className="flex gap-2">
+                                      <div className="w-1 h-1 rounded-full bg-[#5A8A72] mt-1.5 shrink-0" />
+                                      <span className="text-gray-600 text-xs leading-relaxed">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* CTA */}
+                          <button
+                            onClick={() => setIsCallbackOpen(true)}
+                            className="mt-4 w-full sm:w-auto px-4 py-2 bg-[#243851] hover:bg-[#2d4562] text-white text-xs sm:text-sm font-medium rounded-sm transition-colors"
+                          >
+                            Заказать услугу
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
-                </Link>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
@@ -651,13 +781,13 @@ export function FinanceLanding() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="py-4 sm:py-10 lg:py-12 bg-gray-100/80 backdrop-blur-xl border-t border-gray-200/50 relative">
+      <footer className="py-8 sm:py-10 lg:py-12 bg-gray-100/80 backdrop-blur-xl border-t border-gray-200/50 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-gray-200/30 backdrop-blur-sm" />
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Logo */}
             <div>
-              <a href="#" className="footer-link flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4">
+              <a href="#" className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                 <Image
                   src="/images/logo-fin.png"
                   alt="ФинЭксперт"
@@ -675,14 +805,14 @@ export function FinanceLanding() {
             </div>
             {/* Navigation */}
             <div>
-              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Навигация</h4>
-              <ul className="space-y-0 sm:space-y-2">
+              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Навигация</h4>
+              <ul className="space-y-1.5 sm:space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
                       onClick={(e) => handleSmoothScroll(e, link.href)}
-                      className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
+                      className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
                       {link.name}
                     </a>
@@ -692,21 +822,16 @@ export function FinanceLanding() {
             </div>
             {/* Services */}
             <div>
-              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Услуги</h4>
-              <ul className="space-y-0 sm:space-y-2">
-                {[
-                  { name: "Финансовый консалтинг", href: "/services/consulting" },
-                  { name: "Регистрация и ликвидация ЮЛ", href: "/services/registration" },
-                  { name: "Бухгалтерские услуги", href: "/services/accounting" },
-                  { name: "Кадровый аутсорсинг", href: "/services/hr" },
-                  { name: "Банковские услуги", href: "/services/banking" },
-                ].map((service) => (
-                  <li key={service.name}>
+              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Услуги</h4>
+              <ul className="space-y-1.5 sm:space-y-2">
+                {serviceDetails.map((service) => (
+                  <li key={service.title}>
                     <a
-                      href={service.href}
-                      className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
+                      href="#services"
+                      onClick={(e) => handleSmoothScroll(e, "#services")}
+                      className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors inline-block"
                     >
-                      {service.name}
+                      {service.title}
                     </a>
                   </li>
                 ))}
@@ -714,12 +839,12 @@ export function FinanceLanding() {
             </div>
             {/* Contacts */}
             <div>
-              <h4 className="font-semibold mb-1 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Контакты</h4>
-              <ul className="space-y-0.5 sm:space-y-3">
+              <h4 className="font-semibold mb-2.5 sm:mb-4 text-[#1a2a3a] text-sm sm:text-base">Контакты</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 <li>
                   <a
                     href="tel:+78129827090"
-                    className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5 sm:gap-2"
+                    className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5 sm:gap-2"
                   >
                     <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                     +7 (812) 982 70 90
@@ -728,7 +853,7 @@ export function FinanceLanding() {
                 <li>
                   <a
                     href="mailto:info@finexspert24.ru"
-                    className="footer-link text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors break-all"
+                    className="text-xs sm:text-sm text-gray-500 hover:text-[#1a2a3a] transition-colors break-all"
                   >
                     info@finexspert24.ru
                   </a>
@@ -740,7 +865,7 @@ export function FinanceLanding() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-300/50 mt-4 sm:mt-10 lg:mt-12 pt-3 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
+          <div className="border-t border-gray-300/50 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
             © 2026 ФинЭксперт. Все права защищены.
           </div>
         </div>

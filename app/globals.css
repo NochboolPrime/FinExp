@@ -198,9 +198,9 @@
     display: none;
   }
   
-  /* Better tap targets for mobile - исключаем точки-индикаторы и ссылки в футере */
+  /* Better tap targets for mobile - исключаем точки-индикаторы (dot indicators) */
   @media (max-width: 640px) {
-    button:not(.dot-indicator), a:not(.footer-link), [role="button"]:not(.dot-indicator) {
+    button:not(.dot-indicator), a, [role="button"]:not(.dot-indicator) {
       min-height: 44px;
       min-width: 44px;
     }
