@@ -150,16 +150,90 @@ const serviceDetails = [
     ],
   },
   {
-    title: "Новая услуга",
-    desc: "Описание услуги появится в ближайшее время.",
-    iconPath: "M12 6v6m0 0v6m0-6h6m-6 0H6",
-    content: [],
+    title: "Составление РКМ",
+    desc: "Полный комплект расчетно-калькуляционных материалов под ключ по требованиям ФАС для обоснования цены контракта.",
+    iconPath: "M9 7V2.13a2.98 2.98 0 0 0-1.293.749L4.879 5.707A2.98 2.98 0 0 0 4.13 7H9zm1 2H4v12a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-9v5a1 1 0 0 1-1 1zm-2 4h8v2H8v-2zm0 4h5v2H8v-2z",
+    content: [
+      {
+        heading: "Описание услуги",
+        items: [
+          "Готовим расчёты и документы для обоснования стоимости продукции или работ по государственным и коммерческим контрактам",
+          "Используем актуальные методы (затратный и сравнительный) с соответствием нормативам",
+        ],
+      },
+      {
+        heading: "Что входит",
+        items: [
+          "Анализ и структурирование исходных данных (затраты, спецификации, калькуляции)",
+          "Определение оптимального метода расчёта",
+          "Подготовка РКМ и сметной обосновывающей документации",
+          "Проверка и выверка данных",
+          "Сопровождение при запросах со стороны заказчика/аудита",
+        ],
+      },
+      {
+        heading: "Преимущества",
+        items: [
+          "Экономия времени: готовый пакет «под ключ»",
+          "Профессиональная точность: соответствие требованиям Минфина и ФАС",
+          "Снижение рисков: минимизация возвратов и замечаний",
+          "Поддержка на всех этапах согласования",
+        ],
+      },
+      {
+        heading: "Сроки и стоимость",
+        items: [
+          "Сроки: от 5 рабочих дней после получения исходных данных",
+          "Стоимость: от 80 000 ₽ (зависит от сложности и объёма данных)",
+        ],
+      },
+    ],
   },
   {
-    title: "Новая услуга",
-    desc: "Описание услуги появится в ближайшее время.",
-    iconPath: "M12 6v6m0 0v6m0-6h6m-6 0H6",
-    content: [],
+    title: "Документы для Минпромторга",
+    desc: "Подготовка документов для подтверждения производственного цикла и целевого назначения ввоза товара.",
+    iconPath: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z",
+    content: [
+      {
+        heading: "Описание услуги",
+        items: [
+          "Помогаем получить заключения Минпромторга по вопросам налогообложения и оборонзаказа",
+          "��ва направления: подтверждение длительности производственного цикла и целевое назначение ввоза товаров",
+        ],
+      },
+      {
+        heading: "Подтверждение производственного цикла",
+        items: [
+          "Сбор материалов (заявление, копия контракта, технико-экономическое обоснование, график производства)",
+          "Подготовка пакета документов по требованиям (приказ №807)",
+        ],
+      },
+      {
+        heading: "Целевое назначение ввоза товаров",
+        items: [
+          "Подготовка заявки для Минпромторга",
+          "Формирование пакета документов",
+          "Подтверждение права на применение налоговых льгот (0% НДС)",
+        ],
+      },
+      {
+        heading: "Этапы работы",
+        items: [
+          "Консультация и анализ ситуации клиента",
+          "Сбор исходных документов (договора, описания товаров, планы производства)",
+          "Подготовка заявлений по требованиям Минпромторга (приказы 807, 4788)",
+          "Подача документов и сопровождение до выдачи заключений",
+        ],
+      },
+      {
+        heading: "Сроки и стоимость",
+        items: [
+          "Подготовка документов: 7–10 рабочих дней",
+          "Ожидание заключений: до 30–45 дней",
+          "Стоимость: от 60 000 ₽ за полный пакет подготовки",
+        ],
+      },
+    ],
   },
 ]
 
@@ -197,8 +271,8 @@ export function FinanceLanding() {
 
   const missionSlides = [
     {
-      title: "Миссия Компании",
-      text: 'ООО "ФинЭксперт" является экспертом и партнером, помогает клиентам добиваться успехов в мире развивающейся Бизнес среды.',
+      title: "Финансово-юридическая экспертиза для бизнеса",
+      text: "Помогаем компаниям решать сложные задачи в финансах и праве: от обоснования цен по ГОЗ до разрешения таможенных и налоговых споров",
     },
     {
       title: "Наша цель",
@@ -369,7 +443,7 @@ export function FinanceLanding() {
             <div className="relative z-10 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row lg:items-center lg:justify-between min-h-[450px] sm:min-h-[500px] lg:min-h-[600px]">
               {/* Left - Text Content with Auto Slider */}
               <div className="max-w-xl space-y-4 sm:space-y-6 lg:space-y-8">
-                <div className="relative h-52 sm:h-48 lg:h-44 overflow-hidden">
+                <div className="relative h-64 sm:h-56 lg:h-52 overflow-hidden">
                   {missionSlides.map((slide, index) => (
                     <div
                       key={index}
@@ -565,41 +639,78 @@ export function FinanceLanding() {
           </div>
         </div>
       </section>
-      {/* About Company Section - Premium */}
+      {/* About Company Section - Results for Client */}
       <section id="about" className="relative">
         {/* Full width image with overlay */}
-        <div className="relative h-[500px] sm:h-[450px] lg:h-[450px]">
+        <div className="relative h-auto min-h-[600px] sm:min-h-[550px] lg:min-h-[500px] py-8">
           <Image
             src="/images/office-building.png"
             alt="Команда ФинЭксперт"
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#1a2a3a]/60" />
+          <div className="absolute inset-0 bg-[#1a2a3a]/70" />
          
           {/* Content over image */}
-          <div className="absolute inset-0 flex items-center">
+          <div className="relative z-10 h-full flex items-center">
             <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
-                {/* Mission */}
-                <div className="bg-[#1a2a3a]/95 backdrop-blur-sm p-4 sm:p-5 lg:p-8 rounded-lg">
-                  <h3 className="text-sm sm:text-base lg:text-xl font-semibold uppercase tracking-wide text-white block mb-2 sm:mb-3">Миссия</h3>
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Мы стремимся быть признанным экспертом и предпочтительным партнером, помогая нашим клиентам добиваться успехов в мире быстро развивающейся Бизнес среды в России.
+              {/* Header */}
+              <div className="text-center mb-6 sm:mb-8">
+                <span className="inline-block px-2.5 sm:px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-sm mb-2 sm:mb-3">
+                  Преимущества
+                </span>
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                  Результат для клиента
+                </h2>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                {/* Документы */}
+                <div className="bg-white/95 backdrop-blur-sm p-4 sm:p-5 rounded-lg">
+                  <div className="w-10 h-10 bg-[#5A8A72]/10 rounded-lg flex items-center justify-center mb-3">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#5A8A72]" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 12L11 14L15 10M19 21H5C4 21 3 20 3 19V5C3 4 4 3 5 3H19C20 3 21 4 21 5V19C21 20 20 21 19 21Z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-[#1a2a3a] mb-2">Документы, соответствующие требованиям</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Вы получаете корректно оформленный пакет документов, полностью соответствующий требованиям законодательства и регулирующих органов.
                   </p>
                 </div>
-                {/* Work Principle */}
-                <div className="bg-[#1a2a3a]/95 backdrop-blur-sm p-4 sm:p-5 lg:p-8 rounded-lg text-slate-600 bg-secondary-foreground">
-                  <h3 className="text-sm sm:text-base lg:text-xl font-semibold uppercase tracking-wide block mb-2 sm:mb-3 text-primary">Принцип работы</h3>
-                  <p className="text-xs sm:text-sm leading-relaxed text-primary">
-                    Это стремление соответствовать высоким стандартам качества российских компаний, а также лучшим традициям отечественной и мировой школы делового стиля и профессиональной этики.
+                {/* Снижение рисков */}
+                <div className="bg-[#1a2a3a]/95 backdrop-blur-sm p-4 sm:p-5 rounded-lg">
+                  <div className="w-10 h-10 bg-[#5A8A72]/20 rounded-lg flex items-center justify-center mb-3">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#5A8A72]" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-white mb-2">Снижение рисков отказа</h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    Минимизируем вероятность возврата документов и замечаний за счёт точных расчётов и соблюдения всех нормативов.
                   </p>
                 </div>
-                {/* Specialists */}
-                <div className="bg-[#1a2a3a]/95 backdrop-blur-sm p-4 sm:p-5 lg:p-8 rounded-lg sm:col-span-2 lg:col-span-1">
-                  <h3 className="text-sm sm:text-base lg:text-xl font-semibold uppercase tracking-wide text-white block mb-2 sm:mb-3">Специалисты</h3>
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
-                    Это высококвалифицированные профессионалы, имеющие большой опыт работы. Они без труда решают финансово-экономические, кадровые, бухгалтерские и налоговые задачи.
+                {/* Экономия времени */}
+                <div className="bg-white/95 backdrop-blur-sm p-4 sm:p-5 rounded-lg">
+                  <div className="w-10 h-10 bg-[#5A8A72]/10 rounded-lg flex items-center justify-center mb-3">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#5A8A72]" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                      <path d="M12 6V12L16 14" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-[#1a2a3a] mb-2">Экономия времени</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Берём на себя сложную и трудоёмкую работу, позволяя вам сосредоточиться на бизнесе.
+                  </p>
+                </div>
+                {/* Поддержка */}
+                <div className="bg-[#1a2a3a]/95 backdrop-blur-sm p-4 sm:p-5 rounded-lg">
+                  <div className="w-10 h-10 bg-[#5A8A72]/20 rounded-lg flex items-center justify-center mb-3">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#5A8A72]" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-white mb-2">Поддержка на всех этапах</h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    Сопровождаем вас от подготовки документов до взаимодействия с заказчиками и государственными органами.
                   </p>
                 </div>
               </div>
@@ -862,11 +973,27 @@ export function FinanceLanding() {
                   <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 inline mr-1.5 sm:mr-2" />
                   г. Москва, Одинцово, ул. Садовая, д. 3Б, офис 809
                 </li>
+                <li className="text-xs sm:text-sm text-gray-500 pt-2 border-t border-gray-200/50">
+                  ИНН: 7807362241
+                </li>
+                <li className="text-xs sm:text-sm text-gray-500">
+                  ОГРН: 1117847326651
+                </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-300/50 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
-            © 2026 ФинЭксперт. Все права защищены.
+          <div className="border-t border-gray-300/50 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs sm:text-sm text-gray-400">
+              © 2026 ФинЭксперт. Все права защищены.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm">
+              <a href="/privacy" className="text-gray-400 hover:text-[#1a2a3a] transition-colors">
+                Политика конфиденциальности
+              </a>
+              <a href="/consent" className="text-gray-400 hover:text-[#1a2a3a] transition-colors">
+                Согласие на обработку ПД
+              </a>
+            </div>
           </div>
         </div>
       </footer>
