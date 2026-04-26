@@ -129,7 +129,7 @@ const serviceDetails = [
   },
   {
     title: "Банковские услуги",
-    desc: "Помощь в получении банковски�� гарантий и кредитов. Работа с лучшими банками-партнерами.",
+    desc: "Помощь в получении банковски���� гарантий и кредитов. Работа с лучшими банками-партнерами.",
     iconPath: "M3 21H21M3 10H21M5 6L12 3L19 6M4 10V21M20 10V21M8 14V17M12 14V17M16 14V17",
     content: [
       {
@@ -450,10 +450,10 @@ export function FinanceLanding() {
               <div className="absolute inset-0 bg-gray-900/60" />
             </div>
             {/* Content */}
-            <div className="relative z-10 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row lg:items-center lg:justify-between min-h-[450px] sm:min-h-[500px] lg:min-h-[600px]">
+            <div className="relative z-10 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center lg:flex-row lg:items-center lg:justify-between h-full min-h-[450px] sm:min-h-[500px] lg:min-h-[600px]">
               {/* Left - Text Content with Auto Slider */}
-              <div className="max-w-xl space-y-4 sm:space-y-6 lg:space-y-8">
-                <div className="relative h-64 sm:h-56 lg:h-52 overflow-hidden">
+              <div className="max-w-xl space-y-6 sm:space-y-6 lg:space-y-8 flex-1 flex flex-col justify-center lg:flex-initial lg:block">
+                <div className="relative h-auto min-h-[200px] sm:h-56 lg:h-52 overflow-hidden">
                   {missionSlides.map((slide, index) => (
                     <div
                       key={index}
@@ -463,10 +463,10 @@ export function FinanceLanding() {
                           : "opacity-0 translate-y-4"
                       }`}
                     >
-                      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-balance mb-2 sm:mb-3 font-sans">
+                      <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-balance mb-3 sm:mb-3 font-sans">
                         {slide.title}
                       </h1>
-                      <p className="text-gray-200 text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed">
+                      <p className="text-gray-200 text-base sm:text-base lg:text-lg max-w-lg leading-relaxed">
                         {slide.text}
                       </p>
                     </div>
@@ -695,7 +695,7 @@ export function FinanceLanding() {
                   </div>
                   <h3 className="text-sm sm:text-base font-semibold text-white mb-2">Снижение рисков отказа</h3>
                   <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                    Минимизируем вероятность возврата документов и замечаний за счёт точных расчётов и соблюдения всех нормативов.
+                    Минимизируем вероятность возврата документов и замечаний з�� счёт точных расчётов и соблюдения всех нормативов.
                   </p>
                 </div>
                 {/* Экономия времени */}
@@ -824,7 +824,7 @@ export function FinanceLanding() {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                   <circle cx="12" cy="9" r="2" />
                 </svg>
-                <span className="text-center sm:text-left leading-snug">г. Москва, Одинцово, ул. Садовая, д. 3Б, офис 809</span>
+                <span className="text-center sm:text-left leading-snug">г. Москва, Одинцово, ул. Садов���я, д. 3Б, офис 809</span>
               </a>
               <a href="mailto:info@finexspert24.ru" className="flex items-center gap-1.5 sm:gap-2 text-white/60 hover:text-white transition-colors">
                 <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" stroke="currentColor" strokeWidth="1.5">
