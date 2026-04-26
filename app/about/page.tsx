@@ -1,24 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Phone, Building2 } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
-  const navLinks = [
-    { name: "Главная", href: "/" },
-    { name: "О компании", href: "/about" },
-    { name: "Услуги", href: "/#services" },
-    { name: "Новости", href: "/#news" },
-    { name: "Контакты", href: "/#pricing" },
-  ]
-
-  const services = [
-    "Бухгалтерский учет",
-    "Налоговый учет",
-    "Аудит",
-    "Консалтинг",
-    "Юридические услуги",
-  ]
-
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
       {/* Header */}
@@ -143,97 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer - Glass effect */}
-      <footer className="py-6 sm:py-8 bg-gray-200/50 backdrop-blur-xl border-t border-gray-200/50 mt-auto">
-        <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {/* Logo */}
-            <div>
-              <Link href="/" className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
-                <Image
-                  src="/images/logo-fin.png"
-                  alt="ФинЭксперт"
-                  width={28}
-                  height={28}
-                  className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
-                />
-                <span className="text-sm font-bold text-[#1a2a3a]">
-                  Фин<span className="text-[#5A8A72]">Эксперт</span>
-                </span>
-              </Link>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Финансовые решения для бизнеса
-              </p>
-            </div>
-
-            {/* Navigation */}
-            <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Навигация</h4>
-              <ul className="space-y-1">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Услуги</h4>
-              <ul className="space-y-1">
-                {services.map((service) => (
-                  <li key={service}>
-                    <Link
-                      href="/#services"
-                      className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors"
-                    >
-                      {service}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contacts */}
-            <div>
-              <h4 className="text-xs font-semibold text-[#1a2a3a] mb-2">Контакты</h4>
-              <ul className="space-y-1.5">
-                <li>
-                  <a
-                    href="tel:+78129827090"
-                    className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors flex items-center gap-1.5"
-                  >
-                    <Phone className="w-3 h-3 shrink-0" />
-                    <span>+7 (812) 982 70 90</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:info@finexspert24.ru"
-                    className="text-xs text-gray-400 hover:text-[#1a2a3a] transition-colors break-all"
-                  >
-                    info@finexspert24.ru
-                  </a>
-                </li>
-                <li className="text-xs text-gray-400 leading-relaxed flex items-start gap-1.5">
-                  <Building2 className="w-3 h-3 shrink-0 mt-0.5" />
-                  <span>г. Москва, Одинцово, ул. Садовая, д. 3Б, офис 809</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-300/50 mt-5 sm:mt-6 pt-4 sm:pt-5 text-center text-xs text-gray-400">
-            © 2026 ФинЭксперт. Все права защищены.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
