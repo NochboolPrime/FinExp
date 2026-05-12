@@ -17,6 +17,7 @@ import {
   Quote,
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { CallbackModal } from "@/components/callback-modal"
 
 const serviceDetails = [
@@ -258,7 +259,7 @@ const testimonials = [
   },
   {
     name: "Юрий",
-    text: 'Спасибо компании "ФинЭксперт" за качественный аудит.',
+    text: 'Спасибо компании "ФинЭксперт" за качествен��ый аудит.',
   },
   {
     name: "Ирина",
@@ -695,7 +696,7 @@ export function FinanceLanding() {
                   </div>
                   <h3 className="text-sm sm:text-base font-semibold text-white mb-2">Снижение рисков отказа</h3>
                   <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                    Минимизируем вероятность возврата документов и замечаний з�� счёт точных расчётов и соблюдения всех нормативов.
+                    Минимизируем вероятность возврата документов и замечаний за счёт точных расчётов и соблюдения всех нормативов.
                   </p>
                 </div>
                 {/* Экономия времени */}
@@ -896,6 +897,32 @@ export function FinanceLanding() {
                   <span className="text-foreground">Записаться</span>
                   <ArrowDownRight className="w-4 h-4 ml-1.5 sm:ml-2 group-hover:rotate-45 transition-transform text-foreground" />
                 </Button>
+              </div>
+              {/* Consent Checkbox */}
+              <div className="mt-3 sm:mt-4">
+                <label className="flex items-start gap-2.5 cursor-pointer group">
+                  <div className="relative flex items-center justify-center mt-0.5">
+                    <input
+                      type="checkbox"
+                      required
+                      className="peer sr-only"
+                    />
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 rounded border-2 border-white/30 bg-white/5 peer-checked:bg-[#5A8A72] peer-checked:border-[#5A8A72] transition-all peer-focus:ring-2 peer-focus:ring-[#5A8A72]/50" />
+                    <svg className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                  </div>
+                  <span className="text-xs sm:text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">
+                    Я даю согласие на{" "}
+                    <Link href="/consent" className="text-[#5A8A72] hover:text-[#6BA183] underline underline-offset-2">
+                      обработку персональных данных
+                    </Link>
+                    {" "}и принимаю{" "}
+                    <Link href="/privacy" className="text-[#5A8A72] hover:text-[#6BA183] underline underline-offset-2">
+                      политику конфиденциальности
+                    </Link>
+                  </span>
+                </label>
               </div>
             </div>
           </form>

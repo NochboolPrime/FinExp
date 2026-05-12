@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-
+import Link from "next/link"
 import { useState } from "react"
 
 interface CallbackModalProps {
@@ -96,6 +96,30 @@ export function CallbackModal({ isOpen, onClose, title = "Заказать зв�
                   placeholder="+7 (___) ___-__-__"
                 />
               </div>
+              {/* Consent Checkbox */}
+              <label className="flex items-start gap-2.5 cursor-pointer group">
+                <div className="relative flex items-center justify-center mt-0.5">
+                  <input
+                    type="checkbox"
+                    required
+                    className="peer sr-only"
+                  />
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 rounded border-2 border-gray-300 bg-gray-50 peer-checked:bg-[#5A8A72] peer-checked:border-[#5A8A72] transition-all peer-focus:ring-2 peer-focus:ring-[#5A8A72]/50" />
+                  <svg className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </div>
+                <span className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  Я даю согласие на{" "}
+                  <Link href="/consent" className="text-[#5A8A72] hover:text-[#4D7A64] underline underline-offset-2">
+                    обработку персональных данных
+                  </Link>
+                  {" "}и принимаю{" "}
+                  <Link href="/privacy" className="text-[#5A8A72] hover:text-[#4D7A64] underline underline-offset-2">
+                    политику конфиденциальности
+                  </Link>
+                </span>
+              </label>
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -103,9 +127,6 @@ export function CallbackModal({ isOpen, onClose, title = "Заказать зв�
               >
                 {isSubmitting ? "Отправка..." : "Отправить"}
               </button>
-              <p className="text-xs text-gray-400 text-center leading-relaxed px-2">
-                Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-              </p>
             </form>
           )}
         </div>
